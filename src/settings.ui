@@ -76,7 +76,7 @@
      </property>
      <property name="toolTip">
       <string>Switching themes may result in
-some UI issues. Restarting the 
+some UI issues. Restarting the
 Launcher should fix them.</string>
      </property>
      <property name="text">
@@ -682,10 +682,10 @@ background-color:rgb(255, 255, 255);
 border-radius:3px</string>
       </property>
       <property name="text">
-       <string>Solo Net</string>
+       <string>Coop Spawns</string>
       </property>
       <property name="placeholderText">
-       <string>Solo Net</string>
+       <string>Coop Spawns</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="solonetParam_lineEdit">
@@ -706,10 +706,10 @@ background-color:rgb(255, 255, 255);
 border-radius:3px</string>
       </property>
       <property name="text">
-       <string>-solo-net</string>
+       <string>-coop_spawns</string>
       </property>
       <property name="placeholderText">
-       <string>-solo-net</string>
+       <string>-coop_spawns</string>
       </property>
      </widget>
     </widget>

@@ -62,8 +62,8 @@ const QString DEFAULT_TOGGLE2ARG = "-nomonsters";
 const QString DEFAULT_TOGGLE3TEXT = "Respawn Monsters";
 const QString DEFAULT_TOGGLE3ARG = "-respawn";
 
-const QString DEFAULT_TOGGLE4TEXT = "Solo-Net";
-const QString DEFAULT_TOGGLE4ARG = "-solo-net";
+const QString DEFAULT_TOGGLE4TEXT = "Coop Spawns";
+const QString DEFAULT_TOGGLE4ARG = "-coop_spawns";
 
 const QString STATE_HEADER = "dsdalauncherstatev2";
 const QString HISTORY_HEADER = "dsdalauncherhistoryv2";
