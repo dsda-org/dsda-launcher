@@ -49,7 +49,7 @@ jobs:
       - name: Build
         shell: msys2 {0}
         run: |
-          export PATH="$QT_ROOT_DIR:$PATH"
+          export PATH="$QT_ROOT_DIR\bin:$PATH"
 
           cd src
           mkdir build
