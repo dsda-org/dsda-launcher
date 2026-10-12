@@ -32,6 +32,8 @@ jobs:
           path-type: minimal
           update: true
           install: >-
+            mingw-w64-x86_64-gcc
+            mingw-w64-x86_64-make
             zip
 
       - name: Install Qt
@@ -47,6 +49,8 @@ jobs:
       - name: Build
         shell: msys2 {0}
         run: |
+          export PATH="$QT_ROOT_DIR:$PATH"
+
           cd src
           mkdir build
           cd build
