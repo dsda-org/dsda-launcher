@@ -25,30 +25,37 @@ jobs:
       - name: Set reference slug
         run: echo "REF_SLUG=${GITHUB_REF////_}" >> $GITHUB_ENV
 
-      - uses: msys2/setup-msys2@66cd2cce69caa17b53920067426061ca1de3a884
+      - name: Install with msys2
+        uses: msys2/setup-msys2@66cd2cce69caa17b53920067426061ca1de3a884
         with:
           msystem: MINGW64
           path-type: minimal
           update: true
           install: >-
-            mingw-w64-x86_64-qt5-static
             mingw-w64-x86_64-gcc
             mingw-w64-x86_64-make
-            mingw-w64-x86_64-openssl
-            make
             zip
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125
+        with:
+          aqtversion: '==3.1.*'
+          version: '6.8.0'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_mingw'
+          tools: 'tools_opensslv3_src'
 
       - name: Build
         shell: msys2 {0}
         run: |
-          export PATH="/mingw64/bin:$PATH"
-          export PATH="/mingw64/qt5-static/bin:$PATH"
+          export PATH="$QT_ROOT_DIR\bin:$PATH"
 
           cd src
           mkdir build
           cd build
           qmake ..
-          make
+          mingw32-make
           find . -name "*.exe"
           zip -j dsda-launcher-${{ env.REF_SLUG }}-win64.zip release/dsda-launcher.exe
 
@@ -129,7 +136,7 @@ jobs:
         uses: jurplel/install-qt-action@a9c63c7c123f3069cff414e7e482d95dfa9d8125
         with:
           aqtversion: '==3.1.*'
-          version: '6.2.0'
+          version: '6.8.0'
           host: 'mac'
           target: 'desktop'
           arch: 'clang_64'
