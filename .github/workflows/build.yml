@@ -41,7 +41,8 @@ jobs:
           version: '6.8.0'
           host: 'windows'
           target: 'desktop'
-          arch: 'win64_msvc2022_64'
+          arch: 'win64_mingw'
+          tools: 'tools_opensslv3_src'
 
       - name: Build
         shell: msys2 {0}
@@ -50,7 +51,7 @@ jobs:
           mkdir build
           cd build
           qmake ..
-          make
+          mingw32-make
           find . -name "*.exe"
           zip -j dsda-launcher-${{ env.REF_SLUG }}-win64.zip release/dsda-launcher.exe
 
