@@ -53,7 +53,7 @@ jobs:
           zip -j dsda-launcher-${{ env.REF_SLUG }}-win64.zip release/dsda-launcher.exe
 
       - name: Store build as artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: dsda-launcher-dev-${{ env.REF_SLUG }}-win64
           path: src\build\dsda-launcher-${{ env.REF_SLUG }}-win64.zip
@@ -105,7 +105,7 @@ jobs:
               --icon-file=../../dist/icons/eu.pedro_beirao.dsda-launcher.svg
 
       - name: Store build as artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: dsda-launcher-dev-linux
           path: src/build/DSDA-Launcher-x86_64.AppImage
@@ -153,7 +153,7 @@ jobs:
             ./dsda-launcher.app
 
       - name: Store build as artifact
-        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: dsda-launcher-dev-mac
           path: src/build/dsda-launcher-${{ env.REF_SLUG }}-mac.dmg
